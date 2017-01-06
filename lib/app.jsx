@@ -414,7 +414,7 @@ export const App = connect( mapStateToProps, mapDispatchToProps )( React.createC
 								</div>
 								<NoteList noteBucket={ noteBucket } />
 							</div>
-							<NoteEditor allTags={ state.tags } noteBucket={ noteBucket } tagBucket={ tagBucket } />
+							<NoteEditor noteBucket={ noteBucket } tagBucket={ tagBucket } />
 							{ state.showNoteInfo &&
 								<NoteInfo noteBucket={ noteBucket } />
 							}
