@@ -1,4 +1,5 @@
 import React, { PropTypes } from 'react'
+import isEmailTag from './utils/is-email-tag';
 import TagChip from './components/tag-chip';
 import TagInput from './tag-input';
 import classNames from 'classnames';
@@ -7,6 +8,7 @@ import {
 	differenceBy,
 	intersectionBy,
 	invoke,
+	negate,
 	union,
 } from 'lodash';
 
@@ -157,7 +159,7 @@ export default React.createClass( {
 					onKeyDown={this.onKeyDown}
 				>
 					<input className="hidden-tag" tabIndex="-1" ref={ this.storeHiddenTag } />
-					{ tags.map( tag =>
+					{ tags.filter( negate( isEmailTag ) ).map( tag =>
 						<TagChip
 							key={tag}
 							tag={tag}

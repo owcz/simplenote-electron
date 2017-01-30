@@ -24,7 +24,8 @@
     "npm": "3.10.10"
   },
   "jest": {
-    "rootDir": "lib"
+    "rootDir": "lib",
+    "testRegex": "(/test/.*\\.jsx?)|(test\\.jsx?)$"
   },
   "devDependencies": {
     "appcache-webpack-plugin": "1.3.0",
